@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-	<title>john grubb | contact</title>
+	<title>john grubb | portfolio</title>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
-	<meta name="description" content="John Grubb's online resume and portfolio.  This is the contact page." />
+	<meta name="description" content="John Grubb's web portfolio" />
 	<meta name="keywords" content="super, fantastic, web development" />
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
@@ -41,10 +41,10 @@
 	<link rel="stylesheet" type="text/css" href="_layout/js/prettyphoto/css.prettyPhoto.css" />
 	<script type="text/javascript" src="_layout/js/prettyphoto/jquery.prettyPhoto.js"></script>
 	
-	<!-- //////// Tweet! ////////  -->
-	<link rel="stylesheet" type="text/css" href="_layout/js/tweet/css.tweet.css" />
-	<script type="text/javascript" src="_layout/js/tweet/jquery.tweet.js"></script>
-	
+	<!-- //////// Easy Slider ////////  -->
+	<script type="text/javascript" src="_layout/js/easyslider/jquery.easyslider.js"></script>
+	<link href="_layout/js/easyslider/css.easyslider.css" rel="stylesheet" type="text/css" />
+
 	<!-- //////// Customs JS  ////////  -->	
 	<script type="text/javascript">
 	/* <![CDATA[ */	                                         
@@ -70,57 +70,15 @@
 				modal: false 			// If set to true, only the close button will close the window
 			});
 			
-			// display last tweet
-			 $(".tweet").tweet({
-				username: "johnnygrubb",
-				join_text: "auto",
-				avatar_size: 32,
-				count: 1,
-				auto_join_text_default: "said,",
-				auto_join_text_ed: "i",
-				auto_join_text_ing: "i was",
-				auto_join_text_reply: "i replied to",
-				auto_join_text_url: "i was checking out",
-				loading_text: "loading tweets..."
+			// easy slider
+			$("#slide2").easySlider({
+				auto: true, 
+				continuous: true,
+				speed: 800,
+				controlsShow: true,
+				numeric: true,
+				numericId: 'controls'
 			});
-			
-			// Animate Social Media Icons
-			$("#social-media li a").hover(function () {
-				$(this).stop().animate({
-					paddingTop: "0px"
-				}, 100);
-			}, function () {
-				$(this).stop().animate({
-					paddingTop: "3px"
-				}, 100);
-			});
-					
-			$('.tip-social-media').tipsy({gravity: 'n'});
-			
-			// contact form
-			$("#contact-form").submit(function(){
-				var str = $(this).serialize();
-				$.ajax({
-				   type: "POST",
-				   url: "_layout/php/send.php",
-				   data: str,
-				   success: function(msg)
-				   {
-						$("#formstatus").ajaxComplete(function(event, request, settings){
-							if(msg == 'OK'){ // Message Sent? Show the 'Thank You' message and hide the form
-								result = '<div class="formstatusok">Your message has been sent. Thank you!</div>';
-								$("#fields").hide();
-							}
-							else{
-								result = msg;
-							}
-							$(this).html(result);
-						});
-					}
-				
-				 });
-				return false;
-			}); 
 		
 		});
 	/* ]]> */			
@@ -150,9 +108,9 @@
 			<ul id="nav" class="fixed">
 				<li><a href="index.html">Resume</a></li>
 				<li>/</li>
-				<li><a href="portfolio.html">Portfolio</a></li>
+				<li><a href="portfolio.html" class="active">Portfolio</a></li>
 				<li>/</li>
-				<li><a href="contact.html" class="active">Contact</a></li>
+				<li><a href="contact.html">Contact</a></li>
 			</ul><!-- end #nav -->
 
 			<div class="divider"></div>
@@ -162,83 +120,57 @@
 		<div id="content" class="fixed">
 		<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
 
-			<h2 class="title">Contact</h2>	
-			<div id="contact" class="fixed">
+			<h2 class="title">Portfolio</h2>	
+			<div id="portfolio">
+			
+				<div class="portfolio-item col-1 fixed">
 				
-				<div class="col-2 float-left padded-right"> 
-					
-					<p>Please feel free to say hello.</p>
-
-					<form id="contact-form" class="fixed" action="javascript:alert('success!');">
-						<fieldset>
-							<p>
-								<input class="textbox" type="text" name="name" value="Name*"
-								onfocus="if(this.value=='Name*')this.value='';" onblur="if(this.value=='')this.value='Name*';" />
-							</p>
-			
-							<p>
-								<input class="textbox" type="text" name="email" value="Email*"
-								onfocus="if(this.value=='Email*')this.value='';" onblur="if(this.value=='')this.value='Email*';" />
-							</p>
-
-							<p>
-								<input class="textbox" type="text" name="subject" value="Subject*"  
-								onfocus="if(this.value=='Subject*')this.value='';" onblur="if(this.value=='')this.value='Subject*';"/>
-							</p>
-							<p>
-								<textarea class="textbox" name="message" rows="3" cols="25"></textarea>
-			
-							</p>
-							<p>
-								<input id="btn" type="submit" name="submit" value="Send!" style="width:100px; cursor:pointer;" />
-
-							</p>
-							<p id="formstatus"></p>
-						</fieldset>
-					</form><!-- end #contact-form -->
-
-				</div>
-				<div class="col-3 float-left"> 
-					
-					<p>PO Box 133<br /> 
-					   Stillwater NJ, 07875<br />
-
-		
-					   Tel: 404.213.2327<br />
-					   <a href="mailto:therealjohnnygrubb@gmail.com">theRealJohnnyGrubb@gmail.com</a>
-					 </p>
-	
-					<br />
-						
-					<div id="social">  
-					
-						<div class="tweet"></div>
-						
-						<ul id="social-media">
-							<li>
-
-								<a href="http://www.linkedin.com/in/johnnygrubb" title="Linked InProfile" class="tip-social-media">
-									<img src="_layout/images/social-icons/linkedin.png" width="28" height="28" alt="linkedin "/>
-								</a>
-							</li>
-							<li>
-								<a href="http://twitter.com/johnnygrubb" title="Twitter Profile" class="tip-social-media">
-									<img src="_layout/images/social-icons/twitter.png" width="28" height="28" alt="twitter icon" />
-								</a>
-							</li>
-
-							<li>
-								<a href="http://www.facebook.com/theRealGrubb" title="Facebook Profile" class="tip-social-media">
-									<img src="_layout/images/social-icons/facebook.png" width="28" height="28" alt="facebook " />
-								</a>
-							</li>
-						</ul><!-- end #social-media -->
-					
-					</div><!-- end #social -->
+						<div class="slider-wrap-2">
+							<div class="slider-2" id="slide2">
+								<ul>				
+									<li><img src="images/upc-1.jpg" width="678" height="312" alt="United Palace Concerts" /></li>
+									<li><img src="images/upc-2.jpg" width="678" height="312" alt="United Palace Concerts" /></li>
+									<li><img src="images/upc-3.jpg" width="678" height="312" alt="United Palace Concerts" /></li>
+									<li><img src="images/upc-4.jpg" width="678" height="312" alt="United Palace Concerts" /></li>
+								</ul>
+							</div><!-- end .slider -->
+						</div><!-- end .slider-wrap -->	
 					
 				</div>
 				
-			</div><!-- end #contact -->
+				<div class="portfolio-item col-1 fixed">
+					
+					<div class="col-2 float-left padded-right">
+						
+						<h2>United Palace Concerts</h2>
+						
+						<p>The United Palace Theater is a historic venue way uptown in Washington Heights, New York.  They found themselves in need of a website to direct people toward before and during the Allman Brother's March run in 2010.</p>
+						<p>This site was put together very quickly with the the aid of a designer - Bob Coyne.  Bob and I work very well together and I thought this site was a good showcase of our combined skills.  This site was originally authored in straight HTML due to the very tight timeframe, and the lack of solid specifications for where the site would be headed in the coming months.</p>
+						<p>Once the site grew and maintenance became more of a headache, I extracted much of the layout of the site into a simple PHP framework that allowed much quicker editing of site navigation with a whole lot less room for error.</p>
+						<p>There was a fair amount of SEO work done on this site, and once I took over as webmaster, I implemented a number of Apache techniques to improve the response time as well as make sure that duplicate pages were not crawled.  Individual page meta tags were replaced by variables on each page for maximum SEO.</p>
+
+					</div>
+					<div class="col-3 float-left">
+												
+						<p><strong>Project Details:</strong></p>
+						
+						<ul>
+							<li>Custom design and PHP coding</li>
+							<li>Very clean and responsive</li>
+							<li>3rd party integration - Wufoo forms, MailChimp</li>
+							<li>Services provided also included custom MailChimp email templates and email campaign creation and monitoring.</li>
+						</ul>
+						
+						<p><strong>Live preview:</strong>
+						   <br /><a href="http://unitedpalaceconcerts.com">unitedpalaceconcerts.com</a></p>			
+						   
+						<p><a href="portfolio.html" class="read-more">Back to Portfolio index</a></p>
+						
+					</div>
+					
+				</div><!-- end .portfolio-item -->
+			
+			</div><!-- end #portfolio -->	
 			
 		<!-- ////////////////////////////////////////////////////////////////////////////////////// -->	
 		</div><!-- end #content -->

@@ -46,9 +46,9 @@
 			lastText: 		'Last',
 			lastShow:		false,				
 			vertical:		false,
-			speed: 			800,
+			speed: 			1200,
 			auto:			false,
-			pause:			2000,
+			pause:			4000,
 			continuous:		false, 
 			numeric: 		false,
 			numericId: 		'controls'
