@@ -74,6 +74,7 @@
 			$("#slide2").easySlider({
 				auto: true, 
 				continuous: true,
+				speed: 800,
 				controlsShow: true,
 				numeric: true,
 				numericId: 'controls'
@@ -127,10 +128,10 @@
 						<div class="slider-wrap-2">
 							<div class="slider-2" id="slide2">
 								<ul>				
-									<li><img src="images/plantright-1.jpg" width="678" height="312" alt="PlantRight.org" /></li>
-									<li><img src="images/plantright-2.jpg" width="678" height="312" alt="PlantRight.org" /></li>
-									<li><img src="images/plantright-3.jpg" width="678" height="312" alt="PlantRight.org" /></li>
-									<li><img src="images/plantright-4.jpg" width="678" height="312" alt="PlantRight.org" /></li>
+									<li><img src="images/atm-1.jpg" width="678" height="312" alt="Almond Tree Marketing" /></li>
+									<li><img src="images/atm-2.jpg" width="678" height="312" alt="Almond Tree Marketing" /></li>
+									<li><img src="images/atm-3.jpg" width="678" height="312" alt="Almond Tree Marketing" /></li>
+									<li><img src="images/atm-4.jpg" width="678" height="312" alt="Almond Tree Marketing" /></li>
 								</ul>
 							</div><!-- end .slider -->
 						</div><!-- end .slider-wrap -->	
@@ -141,11 +142,14 @@
 					
 					<div class="col-2 float-left padded-right">
 						
-						<h2>PlantRight.org</h2>
+						<h2>Breathing Room Center</h2>
 						
-						<p>PlantRight.org is a San Francisco, CA based non-profit organization.  They focus on raising awareness about the problem of invasive botanical species in the state.</p>
-						<p>PlantRight.org was originally a custom built CMS, written in PHP.  There is a rather extensive database-backed feature that will display the list of species that are considered invasive for each planting zone in the state.  Which plants are displayed in the list depends on the regions of the state selected.  New plants are expected to be added to the list, and making it easy to add relevant news about invasive species was an obvious feature.  Once the original developer moved on, there was nobody left in the organization who knew how to update the website.</p>
-						<p>They have a future roadmap including a new section to catalogue and rank potential invasive species to be added to the list which sounded like a perfect use case for a Drupal implementation.  Much of the heavy-lifting of sorting and categorizing the plant species is easily accomplished with the CCK and Views modules.  There is also Imagefield/Imagecache and Lightbox integration on the individual species pages to give the user a more polished experience when viewing.  YUI editor is used for content editing.</p>
+						<p>Breathing Room is a yoga and holistic arts studio based in Warren County, NJ.  They host a large variety of events in two different spaces and have a quickly growing list of clients and teachers.  </p>
+						<p>The old website was an all in one solution purchased from VistaPrint.  The plan limited the site to 5 pages, which forced Breathing Room to cram lots of content into a very small space.  Site templates were limited, SEO was non-existent, and VistaPrint was attempting to up-sell for virtually every desirable feature.</p>
+						<p>The owner of the studio is very hands on and wanted a system that would allow her to grow her site as she saw fit, not as the terms of her agreement with a provider allowed.  After a period of discovery with the client, we decided on a Wordpress solution.</p>  
+						<p>Wordpress has a number of plug-ins that would immediately accomplish her most needed features.  Contact forms, a calendar, and the ability to finely control the look and layout of the content on the site were big plusses for Wordpress.</p>
+						<p>The main geeky details were the use of a custom theme based on the 960.gs CSS framework, and the use of Wordpress' underused "Custom Fields" feature to protect the Google Map on the directions page from being altered by Wordpress' TinyMCE editor whenever the client wanted to edit the Directions page.</p>
+						<p>I ended up extracting a <a href="http://github.com/JGrubb/Base-WP-theme">Wordpress theme framework</a> from this build that lives here on Github.  Many thanks to Nathan Smith for the <a href="http://960.gs">960.gs</a> and Elliot Jay Stocks for upgrading the excellent <a href="http://starkerstheme.com/">Starkers theme</a> to include the many awesome features that WP 3.0 offers.</p>
 
 					</div>
 					<div class="col-3 float-left">
@@ -153,15 +157,14 @@
 						<p><strong>Project Details:</strong></p>
 						
 						<ul>
-							<li>Drupal, Fusion-based theme</li>
-							<li>Lots of Views Arguments</li>
-							<li>Community features for CA Master Gardeners</li>
-							<li>Lots of searchable content, Lucene coming soon</li>
-							<li>TypeKit fonts everywhere!</li>
+							<li>Wordpress, custom theme</li>
+							<li>Very compact CSS - loads FAST</li>
+							<li>Classy and judicious use of jQuery</li>
+							<li>Site header and content header tags make use of TypeKit fonts.</li>
 						</ul>
 						
 						<p><strong>Live preview:</strong>
-						   <br /><a href="www.plantright.org">www.plantRight.org</a></p>
+						   <br /><a href="http://breathingroomcenter.com">breathingroomcenter.com</a></p>
 						   
 						<p><a href="portfolio.html" class="read-more">Back to Portfolio index</a></p>
 						
